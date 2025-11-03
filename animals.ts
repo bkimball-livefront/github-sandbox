@@ -2,8 +2,8 @@
 export const animalByLetter = [
     'Alligator',
     'Bear',
-    'Capybara',
-    'Donkey',
+    'Chicken',
+    'Duck',
     'Elephant',
     'Fish',
     'Gorilla',
