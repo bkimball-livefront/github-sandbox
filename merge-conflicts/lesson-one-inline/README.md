@@ -35,7 +35,7 @@ Also make an update to any other animal of your choice.
 ```bash
 CLI:
 
-git add ../../animals.ts
+git add animals.ts
 git commit -m "Lesson One: change Bear -> Black Bear"
 
 ---
@@ -67,7 +67,7 @@ Try this on your own using what you learned in Step 4
 
 CLI:
 
-1. git add ../../animals.ts
+1. git add animals.ts
 2. git commit -m "Lesson One: change Bear -> Brown Bear"
 
 ---
@@ -156,7 +156,7 @@ Try this on your own using what you learned in Step 4 and 6
 
 CLI:
 
-1. git add ../../animals.ts
+1. git add animals.ts
 2. git commit -m "Lesson One: Resolve same-line conflict"
 
 ---
