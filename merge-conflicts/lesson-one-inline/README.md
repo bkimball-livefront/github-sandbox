@@ -1,6 +1,6 @@
-## 🧩 Exercise A — Same-Line Edit Conflict (The Classic)
+## Exercise 1: Same-Line Edit Conflict (The Classic)
 
-### 🎯 Goal
+### Goal
 Create a guaranteed merge conflict by changing the **same line** in two branches, then resolve it.
 
 ---
