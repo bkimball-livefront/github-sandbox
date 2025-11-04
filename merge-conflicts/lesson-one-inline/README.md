@@ -9,6 +9,8 @@ From within the repo
 ```bash
 cd merge-conflicts/lesson-one-inline
 ```
+> `cd` - **Change Directory**: Navigate to a different folder
+
 ### 2. From within the repository, start from a clean `main`
 From with the `merge-conflicts/lesson-one-inline` directory
 ```bash
@@ -16,11 +18,15 @@ git checkout main
 git pull
 git status
 ```
+> `git checkout` - **Switch branches**: Change to a different branch or commit  
+> `git pull` - **Download updates**: Fetch and merge latest changes from remote repository  
+> `git status` - **Check state**: Show current branch, staged/unstaged changes, and untracked files
 
 ### 3. Create the feature branch
 ```bash
 git checkout -b lesson-one
 ```
+> `git checkout -b` - **Create and switch**: Create a new branch and immediately switch to it
 
 ### 4. Make a conflicting change on `lesson-one` branch
 Open animals.ts and update the animalByLetter array by replacing Bear -> Black Bear
@@ -33,10 +39,14 @@ Also make an update to any other animal of your choice.
 
 #### Stage and commit
 ```bash
+```bash
 CLI:
 
 git add animals.ts
 git commit -m "Lesson One: change Bear -> Black Bear"
+```
+> `git add` - **Stage changes**: Mark files to be included in the next commit  
+> `git commit` - **Save changes**: Create a snapshot of staged changes with a descriptive message
 
 ---
 
@@ -91,6 +101,7 @@ git checkout lesson-one
 ```bash
 git merge main
 ```
+> `git merge` - **Combine branches**: Integrate changes from another branch into your current branch
 
 For this command, git is saying "Take all the new commits from the branch `main`, and try to combine them (merge) into my current branch `lesson-one`.
 
