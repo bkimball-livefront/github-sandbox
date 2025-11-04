@@ -1,0 +1,125 @@
+# 🧩 Lesson Two: Pull Request Flow (Fork Workflow)
+
+### 🎯 Goal
+Practice the complete fork-based pull request workflow by making a simple change and going through the full review process.
+
+> **Prerequisites**: You should have already forked this repository and set up your local clone with upstream remote. If not, follow the setup instructions in the main README first.
+
+---
+
+## 1️⃣ Start from a clean main (in your fork)
+```bash
+git checkout main
+git pull origin main
+```
+> `git checkout main` - **Switch to main**: Change to the main branch  
+> `git pull origin main` - **Download updates**: Get latest changes from your fork
+
+## 2️⃣ Create a feature branch
+```bash
+git checkout -b feature/fix-salt-measurement
+```
+> `git checkout -b` - **Create and switch**: Create a new branch and immediately switch to it
+
+## 3️⃣ Make the change
+
+Navigate to `pull-request-flow/desserts.ts` and fix the salt measurement:
+
+```diff
+- '1 cup salt',
++ '1 teaspoon salt',
+```
+
+This fixes a critical error - 1 cup of salt would make the cookies inedible! The correct measurement is 1 teaspoon.
+
+## 4️⃣ Commit
+```bash
+cd pull-request-flow
+git add desserts.ts
+git commit -m "Fix salt measurement: change from 1 cup to 1 teaspoon"
+```
+> `git add` - **Stage changes**: Mark files to be included in the next commit  
+> `git commit` - **Save changes**: Create a snapshot of staged changes with a descriptive message
+
+## 5️⃣ Push your branch to your fork
+```bash
+git push -u origin feature/fix-salt-measurement
+```
+> `git push -u origin` - **Upload and track**: Send your branch to your fork and set up tracking
+
+## 6️⃣ Open a PR in your fork
+
+1. Go to your fork on GitHub
+2. Click **"Compare & pull request"** (should appear automatically)
+3. Set up the PR:
+   - **Base**: `main` (your fork)
+   - **Compare**: `feature/fix-salt-measurement` (your fork)
+   - **Title**: "Fix salt measurement from cup to teaspoon"
+   - **Description**: 
+     ```
+     ## Changes
+     - Fixed salt measurement from 1 cup to 1 teaspoon
+     
+     ## Reasoning
+     - 1 cup of salt would make cookies inedible
+     - 1 teaspoon is the correct amount for chocolate chip cookies
+     - Critical bug fix for recipe accuracy
+     ```
+
+4. Click **"Create pull request"**
+
+## 7️⃣ Update after feedback
+
+If you receive feedback, make the changes:
+
+```bash
+# Make edits to desserts.ts
+git add desserts.ts
+git commit -m "Address feedback: add comment explaining salt measurement"
+git push
+```
+
+The PR updates automatically! ✨
+
+## 8️⃣ Merge (in your fork)
+
+1. Use **"Merge pull request"** on your fork
+2. **Delete branch** (remote) after merging
+
+## 9️⃣ Sync your fork's main locally
+```bash
+git checkout main
+git pull origin main
+git branch -d feature/fix-salt-measurement
+```
+> `git branch -d` - **Delete branch**: Remove the local feature branch after merging
+
+---
+
+## 🔁 Keeping your fork up-to-date with upstream
+
+When the instructor updates the template:
+
+```bash
+git fetch upstream
+git checkout main
+git merge upstream/main   # or: git rebase upstream/main
+git push origin main
+```
+> `git fetch upstream` - **Download from upstream**: Get latest changes from the original repository  
+> `git merge upstream/main` - **Integrate upstream**: Combine upstream changes into your main branch
+
+---
+
+## 🎉 Congratulations!
+
+You've completed the full fork-based pull request workflow! This is the standard process used in open-source projects and many professional development teams.
+
+### What you learned:
+- ✅ Fork-based collaboration workflow
+- ✅ Feature branch development
+- ✅ Pull request creation and management
+- ✅ Code review process
+- ✅ Keeping forks synchronized with upstream
+
+**Next**: Try creating another PR with a different change to practice the workflow!

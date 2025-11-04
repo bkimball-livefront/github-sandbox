@@ -1,7 +1,7 @@
 // Simple array with one animal per letter of the alphabet
 export const animalByLetter = [
     'Alligator',
-    'Brown Bear',
+    'Bear',
     'Chicken',
     'Duck',
     'Elephant',

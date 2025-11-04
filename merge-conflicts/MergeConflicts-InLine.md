@@ -4,18 +4,18 @@
 Create a guaranteed merge conflict by changing the **same line** in two branches, then resolve it.
 
 ---
-### 1. Navigate to the `lesson-one-inline` directory
-From within the repo
+### 1. Navigate to the `merge-conflicts` directory
+From within your forked repo
 ```bash
-cd merge-conflicts/lesson-one-inline
+cd merge-conflicts
 ```
 > `cd` - **Change Directory**: Navigate to a different folder
 
-### 2. From within the repository, start from a clean `main`
-From with the `merge-conflicts/lesson-one-inline` directory
+### 2. Start from a clean `main` branch in your fork
+From within the `merge-conflicts` directory
 ```bash
 git checkout main
-git pull
+git pull origin main
 git status
 ```
 > `git checkout` - **Switch branches**: Change to a different branch or commit  
@@ -29,7 +29,7 @@ git checkout -b lesson-one
 > `git checkout -b` - **Create and switch**: Create a new branch and immediately switch to it
 
 ### 4. Make a conflicting change on `lesson-one` branch
-Open animals.ts and update the animalByLetter array by replacing Bear -> Black Bear
+Open `animals.ts` and update the animalByLetter array by replacing Bear -> Black Bear
 ```diff
 - 'Bear',
 + 'Black Bear',
@@ -39,25 +39,18 @@ Also make an update to any other animal of your choice.
 
 #### Stage and commit
 ```bash
-```bash
-CLI:
-
 git add animals.ts
 git commit -m "Lesson One: change Bear -> Black Bear"
 ```
 > `git add` - **Stage changes**: Mark files to be included in the next commit  
 > `git commit` - **Save changes**: Create a snapshot of staged changes with a descriptive message
 
----
-
-SourceTree:
-
+**Alternative - SourceTree:**
 1. Select `File Status` from top left.
 2. Select the files you want to stage (animals.ts)
 3. Add a commit message to the bottom text field "Lesson One: change Bear -> Black Bear"
 4. Make sure the "Push changes immediately to origin/*" box is NOT checked.
 5. Select `Commit`
-```
 
 ### 5. Switch back to main
 ```bash
@@ -75,15 +68,11 @@ Try this on your own using what you learned in Step 4
 <details>
   <summary>Click here if you need help</summary>
 
-CLI:
+**CLI:**
+1. `git add animals.ts`
+2. `git commit -m "Lesson One: change Bear -> Polar Bear"`
 
-1. git add animals.ts
-2. git commit -m "Lesson One: change Bear -> Brown Bear"
-
----
-
-SourceTree:
-
+**SourceTree:**
 1. Select `File Status` from top left.
 2. Select the files you want to stage (animals.ts)
 3. Add a commit message to the bottom text field "Lesson One: change Bear -> Brown Bear"
@@ -115,7 +104,7 @@ So:
 Git will:
 
 * Compare main and lesson-one to find the common ancestor (the point before the two branches diverged).
-* Apply the changes that exist in lesson-one but not yet in main.
+* Apply the changes that exist in main but not yet in lesson-one.
 * Attempt to combine both versions of the files line by line.
 * If both branches edited the same lines differently, Git cannot decide which to keep — so it stops and flags a merge conflict.
 ---
@@ -136,11 +125,11 @@ Unmerged paths:
   ```
 
 ### 9. Resolving the conflict
-In your IDE of choice navigate to the file where you're having the merge conflicts `lesson-one`.
+In your IDE navigate to the file where you're having the merge conflicts (`animals.ts`).
 
-It should look like so:
+It should look like this:
 
-```bash
+```typescript
 <<<<<<< HEAD
     'Black Bear',
 =======
@@ -148,41 +137,45 @@ It should look like so:
 >>>>>>> main
 ```
 * `HEAD` means "your current branch" (In this example, that's `lesson-one`)
-* the section below `=======` comes from the other branch (`main`).
+* The section below `=======` comes from the other branch (`main`).
 
-You'll be given the option of selecting `Accept Current Change`,`Accept Incoming Change`, `Accept Both Changes`, `Compare Changes`
+You'll be given the option of selecting `Accept Current Change`, `Accept Incoming Change`, `Accept Both Changes`, `Compare Changes`
 
 ![alt text](image.png)
 
-You can resolve the conflict by selecting any of the `Accept` options.
-* Accepting Current Changes will keep `Black Bear` in your `animalByLetter` array.
-* Accepting Incoming Changes will keep `Brown Bear` in your `animalByLetter` array.
+You can resolve the conflict by selecting any of the `Accept` options:
+* **Accepting Current Changes** will keep `Black Bear` in your `animalByLetter` array.
+* **Accepting Incoming Changes** will keep `Brown Bear` in your `animalByLetter` array.
 
-Accept the Incoming Changes
+**For this exercise: Accept the Incoming Changes** (Polar Bear)
 
 #### Stage and complete the merge
 Try this on your own using what you learned in Step 4 and 6
 <details>
   <summary>Click here if you need help</summary>
 
-CLI:
+**CLI:**
+1. `git add animals.ts`
+2. `git commit -m "Lesson One: Resolve same-line conflict"`
 
-1. git add animals.ts
-2. git commit -m "Lesson One: Resolve same-line conflict"
-
----
-
-SourceTree:
-
+**SourceTree:**
 1. Select `File Status` from top left.
 2. Select the files you want to stage (animals.ts)
-3. Add a commit message to the bottom text field "Lesson One: change Bear -> Brown Bear"
+3. Add a commit message to the bottom text field "Lesson One: Resolve same-line conflict"
 4. Make sure the "Push changes immediately to origin/*" box is NOT checked.
 5. Select `Commit`
 
 </details>
 
-## YOU DID IT!!!
-Once you've resolved the conflict and commited, `lesson-one` should now contain:
+## 🎉 YOU DID IT!!!
+Once you've resolved the conflict and committed, `lesson-one` should now contain:
 * Its previous history (Other animal changed in Step 4), plus
-* The new changes from `main` (update to Brown Bear)
+* The new changes from `main` (update to Polar Bear)
+
+### Optional: Push to your fork
+```bash
+git push -u origin lesson-one
+```
+> `git push -u origin` - **Upload and track**: Send your branch to your fork and set up tracking
+
+You can now create a Pull Request in your fork if you want to practice that workflow!
