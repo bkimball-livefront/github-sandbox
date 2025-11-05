@@ -7,7 +7,7 @@ Practice the complete fork-based pull request workflow by making a simple change
 
 ---
 
-## 1️⃣ Start from a clean main (in your fork)
+## 1. Start from a clean main (in your fork)
 ```bash
 git checkout main
 git pull origin main
@@ -15,13 +15,13 @@ git pull origin main
 > `git checkout main` - **Switch to main**: Change to the main branch  
 > `git pull origin main` - **Download updates**: Get latest changes from your fork
 
-## 2️⃣ Create a feature branch
+## 2. Create a feature branch
 ```bash
 git checkout -b feature/fix-salt-measurement
 ```
 > `git checkout -b` - **Create and switch**: Create a new branch and immediately switch to it
 
-## 3️⃣ Make the change
+## 3. Make the change
 
 Navigate to `pull-request-flow/desserts.ts` and fix the salt measurement:
 
@@ -32,7 +32,7 @@ Navigate to `pull-request-flow/desserts.ts` and fix the salt measurement:
 
 This fixes a critical error - 1 cup of salt would make the cookies inedible! The correct measurement is 1 teaspoon.
 
-## 4️⃣ Commit
+## 4. Commit
 ```bash
 cd pull-request-flow
 git add desserts.ts
@@ -41,13 +41,13 @@ git commit -m "Fix salt measurement: change from 1 cup to 1 teaspoon"
 > `git add` - **Stage changes**: Mark files to be included in the next commit  
 > `git commit` - **Save changes**: Create a snapshot of staged changes with a descriptive message
 
-## 5️⃣ Push your branch to your fork
+## 5. Push your branch to your fork
 ```bash
 git push -u origin feature/fix-salt-measurement
 ```
 > `git push -u origin` - **Upload and track**: Send your branch to your fork and set up tracking
 
-## 6️⃣ Open a PR in your fork
+## 6. Open a PR in your fork
 
 1. Go to your fork on GitHub
 2. Click **"Compare & pull request"** (should appear automatically)
@@ -67,8 +67,9 @@ git push -u origin feature/fix-salt-measurement
      ```
 
 4. Click **"Create pull request"**
+5. Ask a teammate to leave a comment on your new Pull Request, use the `#qa-automation` slack channel
 
-## 7️⃣ Update after feedback
+## 7. Update after feedback
 
 If you receive feedback, make the changes:
 
@@ -81,12 +82,12 @@ git push
 
 The PR updates automatically! ✨
 
-## 8️⃣ Merge (in your fork)
+## 8. Merge (in your fork)
 
 1. Use **"Merge pull request"** on your fork
 2. **Delete branch** (remote) after merging
 
-## 9️⃣ Sync your fork's main locally
+## 9. Sync your fork's main locally
 ```bash
 git checkout main
 git pull origin main
@@ -116,10 +117,10 @@ git push origin main
 You've completed the full fork-based pull request workflow! This is the standard process used in open-source projects and many professional development teams.
 
 ### What you learned:
-- ✅ Fork-based collaboration workflow
-- ✅ Feature branch development
-- ✅ Pull request creation and management
-- ✅ Code review process
-- ✅ Keeping forks synchronized with upstream
+- Fork-based collaboration workflow
+- Feature branch development
+- Pull request creation and management
+- Code review process
+- Keeping forks synchronized with upstream
 
 **Next**: Try creating another PR with a different change to practice the workflow!
