@@ -1,6 +1,37 @@
-# 🧩 Lesson Two: Pull Request Flow (Fork Workflow)
+# Workshop: Pull Request Flow (Fork Workflow)
 
-### 🎯 Goal
+## What is a Pull Request?
+
+A **pull request** (PR) is a feature that lets you tell others about changes you've pushed to a branch in a repository. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch.
+
+**Why Pull Requests are essential**:
+- **Code Review**: Team members can review your changes before they're merged
+- **Collaboration**: Discuss implementation details, suggest improvements, and catch bugs
+- **Documentation**: PRs create a historical record of what changed and why
+- **Quality Control**: Ensure code meets team standards before integration
+- **Knowledge Sharing**: Help team members learn from each other's approaches
+
+**What you'll learn in this Workshop**:
+1. Fork-based collaboration workflow (essential for open-source contributions)
+2. Creating and managing feature branches
+3. Writing effective PR descriptions and commit messages
+4. Understanding the review and feedback process
+5. Keeping your fork synchronized with the upstream repository
+6. Best practices for collaborative development
+
+**What to expect**:
+1. Create a feature branch to fix a critical error in a recipe
+2. Make targeted changes and commit them with clear messages
+3. Push your branch and create a pull request in your fork
+4. Practice the complete review cycle including addressing feedback
+5. Merge your changes and clean up branches
+6. Learn to keep your fork up-to-date with upstream changes
+
+This workshop teaches you the collaborative workflow used in professional development teams and open-source projects worldwide.
+
+---
+
+### Goal
 Practice the complete fork-based pull request workflow by making a simple change and going through the full review process.
 
 > **Prerequisites**: You should have already forked this repository and set up your local clone with upstream remote. If not, follow the setup instructions in the main README first.
@@ -55,7 +86,7 @@ git push -u origin feature/fix-salt-measurement
    - **Base**: `main` (your fork)
    - **Compare**: `feature/fix-salt-measurement` (your fork)
    - **Title**: "Fix salt measurement from cup to teaspoon"
-   - **Description**: 
+   - **Description**:  Example below, use what you think is appropriate
      ```
      ## Changes
      - Fixed salt measurement from 1 cup to 1 teaspoon
