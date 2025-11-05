@@ -99,7 +99,7 @@ Try this on your own using what you learned in Step 4
 
 **CLI:**
 1. `git add animals.ts`
-2. `git commit -m "Merge conflict: change Bear -> Polar Bear"`
+2. `git commit -m "Merge conflict: change Bear -> Brown Bear"`
 
 **SourceTree:**
 1. Select `File Status` from top left.
@@ -176,7 +176,7 @@ You can resolve the conflict by selecting any of the `Accept` options:
 * **Accepting Current Changes** will keep `Black Bear` in your `animalByLetter` array.
 * **Accepting Incoming Changes** will keep `Brown Bear` in your `animalByLetter` array.
 
-**For this exercise: Accept the Incoming Changes** (Polar Bear)
+**For this exercise: Accept the Incoming Changes** (Brown Bear)
 
 #### Stage and complete the merge
 Try this on your own using what you learned in Step 4 and 6
@@ -199,7 +199,7 @@ Try this on your own using what you learned in Step 4 and 6
 ## 🎉 YOU DID IT!!!
 Once you've resolved the conflict and committed, `merge-conflict` should now contain:
 * Its previous history (Other animal changed in Step 4), plus
-* The new changes from `main` (update to Polar Bear)
+* The new changes from `main` (update to Brown Bear)
 
 ### Optional: Push to your fork
 ```bash
