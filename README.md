@@ -58,7 +58,8 @@ git push origin main
 
 ## Resetting Your Sandbox (Local Only)
 
-If you want a clean slate in your local clone of your fork:
+### Scenario 1: Clean up your working directory
+If you want a clean slate in your local clone of your fork (removes any uncommitted changes but keeps your fork's history intact):
 ```bash
 git checkout main
 git reset --hard HEAD
@@ -68,10 +69,24 @@ git clean -fd
 > `git reset --hard HEAD` - **Discard all changes**: Remove all uncommitted changes and reset to last commit  
 > `git clean -fd` - **Remove untracked files**: Delete any new files/folders not tracked by Git
 
-If you've merged changes into your fork's main and want to realign with upstream:
+**Use this when**: You have uncommitted changes you want to discard but want to keep any workshop branches or commits you've made.
+
+### Scenario 2: Complete reset to match upstream template
+If you've merged workshop changes into your fork's main and want to completely realign with the clean upstream template (this will remove ALL your workshop commits from main):
 ```bash
 git fetch upstream
 git checkout main
-git reset --hard upstream/main   # WARNING: blows away local changes on main
+git reset --hard upstream/main   # WARNING: This removes ALL commits from your fork's main
 git push --force origin main
 ```
+> `git fetch upstream` - **Download updates**: Get latest changes from the original template repository  
+> `git reset --hard upstream/main` - **Reset completely**: Make your main branch identical to upstream  
+> `git push --force origin main` - **Force update**: Overwrite your fork's main branch on GitHub
+
+**Use this when**: 
+- You've completed workshops and merged them into your main branch
+- You want a completely fresh start with the original template
+- New workshop content has been added to the upstream template
+- You want to start over with a clean main branch
+
+**Note**: Your workshop branches will still exist locally unless you delete them manually. This only affects your main branch.
