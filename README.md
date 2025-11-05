@@ -34,7 +34,7 @@ git remote -v   # should show 'origin' (your fork) and 'upstream' (this template
 > `git remote add` - **Add remote connection**: Link your local repo to another repository  
 > `git remote -v` - **View remotes**: List all remote repositories connected to your local repo
 
-## 🔁 Keep Your Fork in Sync with Upstream
+## Keep Your Fork in Sync with Upstream
 When new content is added to the upstream template:
 
 ```bash
@@ -48,7 +48,7 @@ git push origin main
 > `git push` - **Upload changes**: Send your local commits to the remote repository
 
 
-## 📚 Current Workshops
+## Current Workshops
 
 ### Pull Request Flow
 **Location**: `pull-request-flow/PullRequestFlow.md`

@@ -11,10 +11,10 @@ When this happens, Git pauses the merge and asks you to manually decide which ch
 
 **What you'll learn**: How to create and resolve the most common type of merge conflict — when two branches edit the same line differently.
 
-**Why inline conflicts are most common**: 
+<!-- **Why inline conflicts are most common**: 
 - Multiple developers often work on the same files simultaneously
 - Small changes to the same line (like variable names, strings, or formatting) happen frequently
-- These conflicts are straightforward to understand and resolve, making them perfect for learning
+- These conflicts are straightforward to understand and resolve, making them perfect for learning -->
 
 **What to expect**:
 1. Create two branches that modify the same line in different ways
