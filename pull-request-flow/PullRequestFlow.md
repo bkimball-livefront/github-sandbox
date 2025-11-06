@@ -43,14 +43,14 @@ Practice the complete fork-based pull request workflow by making a simple change
 git checkout main
 git pull origin main
 ```
-> `git checkout main` - **Switch to main**: Change to the main branch  
-> `git pull origin main` - **Download updates**: Get latest changes from your fork
+> `git checkout {branch name}` - **Switch to main**: Change to the main branch  
+> `git pull origin {branch name}` - **Download updates**: Get latest changes from your fork
 
 ## 2. Create a feature branch
 ```bash
 git checkout -b feature/fix-salt-measurement
 ```
-> `git checkout -b` - **Create and switch**: Create a new branch and immediately switch to it
+> `git checkout -b {branch name}` - **Create and switch**: Create a new branch and immediately switch to it
 
 ## 3. Make the change
 
@@ -83,8 +83,8 @@ git push -u origin feature/fix-salt-measurement
 1. Go to your fork on GitHub
 2. Click **"Compare & pull request"** (should appear automatically)
 3. Set up the PR:
-   - **Base**: `main` (your fork)
-   - **Compare**: `feature/fix-salt-measurement` (your fork)
+   - **Base**: `main`
+   - **Compare**: `feature/fix-salt-measurement`
    - **Title**: "Fix salt measurement from cup to teaspoon"
    - **Description**:  Example below, use what you think is appropriate
      ```

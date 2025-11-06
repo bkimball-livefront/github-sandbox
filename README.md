@@ -53,8 +53,10 @@ git push origin main
 ### Pull Request Flow
 **Location**: `pull-request-flow/PullRequestFlow.md`
 
-### Inline Merge Conflicts
-**Location**: `merge-conflicts/MergeConflicts-InLine.md`
+### Merge Conflicts
+**Location**: `merge-conflicts/` (Multiple lessons available)
+- **Lesson 1**: Inline Conflicts (`MergeConflicts-InLine.md`)
+- **Lesson 2**: Delete vs Modify Conflicts (`lesson-two-delete-vs-modify/README.md`)
 
 ## Resetting Your Sandbox (Local Only)
 

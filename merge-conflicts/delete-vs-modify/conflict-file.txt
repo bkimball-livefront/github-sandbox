@@ -1,0 +1,3 @@
+This is a file that will cause conflicts.
+It has multiple lines.
+We'll modify it on one branch and delete it on another.
