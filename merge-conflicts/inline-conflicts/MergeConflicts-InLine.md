@@ -27,7 +27,7 @@ This workshop gives you hands-on experience with the fundamental skill of merge 
 
 ---
 
-## Exercise 1: Same-Line Edit Conflict (The Classic)
+## Same-Line Edit Conflict
 
 ### Goal
 Create a guaranteed merge conflict by changing the **same line** in two branches, then resolve it.
@@ -36,26 +36,24 @@ Create a guaranteed merge conflict by changing the **same line** in two branches
 ### 1. Navigate to the `merge-conflicts` directory
 From within your forked repo
 ```bash
-cd merge-conflicts
+cd merge-conflicts/inline-conflicts
 ```
 > `cd` - **Change Directory**: Navigate to a different folder
 
 ### 2. Start from a clean `main` branch in your fork
-From within the `merge-conflicts` directory
+From within the `merge-conflicts/inline-conflicts` directory
 ```bash
 git checkout main
 git pull origin main
 git status
 ```
-> `git checkout` - **Switch branches**: Change to a different branch or commit  
-> `git pull` - **Download updates**: Fetch and merge latest changes from remote repository  
-> `git status` - **Check state**: Show current branch, staged/unstaged changes, and untracked files
+> [`git checkout`](../../git-glossary.md#git-checkout) | [`git pull`](../../git-glossary.md#git-pull) | [`git status`](../../git-glossary.md#git-status)
 
 ### 3. Create the feature branch
 ```bash
 git checkout -b merge-conflict
 ```
-> `git checkout -b` - **Create and switch**: Create a new branch and immediately switch to it
+> [`git checkout -b`](../../git-glossary.md#git-checkout--b)
 
 ### 4. Make a conflicting change on `merge-conflict` branch
 Open `animals.ts` and update the animalByLetter array by replacing Bear -> Black Bear
@@ -65,26 +63,31 @@ Open `animals.ts` and update the animalByLetter array by replacing Bear -> Black
 ```
 
 Also make an update to any other animal of your choice.
+> Ex: Change M to "Moth"
 
 #### Stage and commit
 ```bash
 git add animals.ts
 git commit -m "Merge Conflict: change Bear -> Black Bear"
 ```
-> `git add` - **Stage changes**: Mark files to be included in the next commit  
-> `git commit` - **Save changes**: Create a snapshot of staged changes with a descriptive message
+> [`git add`](../../git-glossary.md#git-add) | [`git commit`](../../git-glossary.md#git-commit)
 
-**Alternative - SourceTree:**
+<!-- <details>
+  <summary>Alternative - SourceTree</summary>
+
 1. Select `File Status` from top left.
 2. Select the files you want to stage (animals.ts)
 3. Add a commit message to the bottom text field "Merge conflict: change Bear -> Black Bear"
 4. Make sure the "Push changes immediately to origin/*" box is NOT checked.
 5. Select `Commit`
 
+</details> -->
+
 ### 5. Switch back to main
 ```bash
 git checkout main
 ```
+> [`git checkout`](../../git-glossary.md#git-checkout)
 
 ### 6. Make a different change to the same line on `main`
 ```diff
@@ -114,12 +117,13 @@ Try this on your own using what you learned in Step 4
 ```bash
 git checkout merge-conflict
 ```
+> [`git checkout`](../../git-glossary.md#git-checkout)
 
 ### 8. Attempt to update your `merge-conflict` branch with your changes in `main`
 ```bash
 git merge main
 ```
-> `git merge` - **Combine branches**: Integrate changes from another branch into your current branch
+> [`git merge`](../../git-glossary.md#git-merge)
 
 For this command, git is saying "Take all the new commits from the branch `main`, and try to combine them (merge) into my current branch `merge-conflict`.
 
@@ -205,6 +209,6 @@ Once you've resolved the conflict and committed, `merge-conflict` should now con
 ```bash
 git push -u origin merge-conflict
 ```
-> `git push -u origin` - **Upload and track**: Send your branch to your fork and set up tracking
+> [`git push -u origin`](../../git-glossary.md#git-push--u-origin)
 
 You can now create a Pull Request in your fork if you want to practice that workflow!
