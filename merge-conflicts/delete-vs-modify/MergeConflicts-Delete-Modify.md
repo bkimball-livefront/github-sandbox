@@ -53,7 +53,7 @@ cat conflict-file.txt
 
 ---
 
-### ✏️ Step 2 — Create the Modify Branch
+### Step 2 — Create the Modify Branch
 
 Create and switch to a branch that will modify the file:
 
@@ -125,6 +125,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 - `modified in modify-branch`: Shows which branch modified it
 - `Version modify-branch of conflict-file.txt left in tree`: Git keeps the modified version for you to decide
 
+> **💡 Modify/Delete Conflicts**: Decide whether the file should exist. If keeping, re-add with intended content. **Tip:** Use CLI commands below rather than IDE merge tools - they handle file existence conflicts more clearly than visual editors.
+
 ---
 
 ### Step 5 — Resolve the Conflict
@@ -159,11 +161,12 @@ git log --oneline
 
 Verify whether the file exists:
 ```bash
-ls -la conflict-file.txt
+ls conflict-file.txt
 # or
 cat conflict-file.txt  # if you kept it
 ```
-> [`ls`](../../git-glossary.md#ls) | [`cat`](../../git-glossary.md#cat)
+> `ls` - **List files**: Check if the specified file exists in the directory  
+> `cat` - **Display file contents**: Shows the complete contents of a file in the terminal
 
 Check whether the file is present or deleted after resolution.
 
