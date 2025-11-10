@@ -17,10 +17,10 @@ This creates a unique conflict scenario where Git must ask you to explicitly cho
 - Critical for maintaining clean project structure during team collaboration
 
 **What to expect**:
-1. Create a file and commit it to main
-2. Make one branch that modifies the file
-3. Make another branch that deletes the file entirely
-4. Attempt to merge and encounter the delete/modify conflict
+1. Start with the provided file already committed to main
+2. Create a feature branch and modify the file
+3. Switch back to main and delete the file
+4. Attempt to merge main into your feature branch and encounter the delete/modify conflict
 5. Learn to read Git's delete/modify conflict messages
 6. Practice resolving by choosing to keep or remove the file
 7. Understand the implications of each choice
@@ -49,7 +49,7 @@ You'll see that `conflict-file.txt` is already provided for this exercise. Let's
 ```bash
 cat conflict-file.txt
 ```
-> `cat` - **Display file contents**: Shows the complete contents of a file in the terminal
+> [`cat`](../../git-glossary.md#cat)
 
 ---
 
@@ -60,6 +60,7 @@ Create and switch to a branch that will modify the file:
 ```bash
 git checkout -b modify-branch
 ```
+> [`git checkout -b`](../../git-glossary.md#git-checkout--b)
 
 Modify the file content:
 ```bash
@@ -73,57 +74,54 @@ Commit the modification:
 git add conflict-file.txt
 git commit -m "Modify conflict-file.txt content"
 ```
+> [`git add`](../../git-glossary.md#git-add) | [`git commit`](../../git-glossary.md#git-commit)
 
 Push this branch if working with remotes:
 ```bash
 git push origin modify-branch
 ```
+> [`git push`](../../git-glossary.md#git-push)
 
 ---
 
-### 🧨 Step 3 — Delete the File on Another Branch
+### 🧨 Step 3 — Delete the File on Main
 
-Go back to main and make a second branch:
+Go back to main and delete the file there:
 
 ```bash
 git checkout main
-git checkout -b delete-branch
 ```
+> [`git checkout`](../../git-glossary.md#git-checkout)
 
 Delete the file:
 ```bash
 git rm conflict-file.txt 
 git commit -m "Delete conflict-file.txt"
 ```
-> `git rm` - **Remove file from Git**: Deletes the file from both your working directory AND stages the deletion for commit
-
-> **Alternative**: You could also manually delete the file in your IDE then stage the deletion with `git add conflict-file.txt`.
-
-Push this one too if needed:
-```bash
-git push origin delete-branch
-```
+> [`git rm`](../../git-glossary.md#git-rm) | [`git commit`](../../git-glossary.md#git-commit)
 
 ---
 
 ### ⚔️ Step 4 — Merge and Observe the Conflict
 
-Try merging the modify branch into the delete branch:
+Switch back to your modify branch and try merging main:
 
 ```bash
-git merge modify-branch
+git checkout modify-branch
+git merge main
 ```
+> [`git checkout`](../../git-glossary.md#git-checkout) | [`git merge`](../../git-glossary.md#git-merge)
 
 Git will respond with something like:
 ```
-CONFLICT (modify/delete): conflict-file.txt deleted in delete-branch and modified in modify-branch. 
+CONFLICT (modify/delete): conflict-file.txt deleted in main and modified in modify-branch. 
 Version modify-branch of conflict-file.txt left in tree.
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
 **🔍 Understanding the Conflict Message:**
 - `CONFLICT (modify/delete)`: Tells you the type of conflict
-- `deleted in delete-branch`: Shows which branch deleted the file
+- `deleted in main`: Shows which branch deleted the file
 - `modified in modify-branch`: Shows which branch modified it
 - `Version modify-branch of conflict-file.txt left in tree`: Git keeps the modified version for you to decide
 
@@ -140,6 +138,7 @@ If the file should stay deleted:
 git rm conflict-file.txt
 git commit
 ```
+> [`git rm`](../../git-glossary.md#git-rm) | [`git commit`](../../git-glossary.md#git-commit)
 
 **When to choose this:**
 - The file was removed for a good reason (deprecated, refactored, etc.)
@@ -153,6 +152,7 @@ If the modified file should be kept:
 git add conflict-file.txt
 git commit
 ```
+> [`git add`](../../git-glossary.md#git-add) | [`git commit`](../../git-glossary.md#git-commit)
 
 **When to choose this:**
 - The modifications contain important changes
@@ -168,6 +168,7 @@ Check the final state:
 git status
 git log --oneline
 ```
+> [`git status`](../../git-glossary.md#git-status) | [`git log --oneline`](../../git-glossary.md#git-log---oneline)
 
 Verify whether the file exists:
 ```bash
@@ -175,6 +176,7 @@ ls -la conflict-file.txt
 # or
 cat conflict-file.txt  # if you kept it
 ```
+> [`ls`](../../git-glossary.md#ls) | [`cat`](../../git-glossary.md#cat)
 
 Check whether the file is present or deleted after resolution.
 

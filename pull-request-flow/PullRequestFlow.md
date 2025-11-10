@@ -1,4 +1,4 @@
-# Workshop: Pull Request Flow (Fork Workflow)
+# Workshop: Pull Request Flow
 
 ## What is a Pull Request?
 
@@ -12,45 +12,42 @@ A **pull request** (PR) is a feature that lets you tell others about changes you
 - **Knowledge Sharing**: Help team members learn from each other's approaches
 
 **What you'll learn in this Workshop**:
-1. Fork-based collaboration workflow (essential for open-source contributions)
+1. Collaboration workflow (essential for open-source contributions)
 2. Creating and managing feature branches
 3. Writing effective PR descriptions and commit messages
 4. Understanding the review and feedback process
-5. Keeping your fork synchronized with the upstream repository
-6. Best practices for collaborative development
+5. Best practices for collaborative development
 
 **What to expect**:
 1. Create a feature branch to fix a critical error in a recipe
 2. Make targeted changes and commit them with clear messages
-3. Push your branch and create a pull request in your fork
+3. Push your branch and create a pull request
 4. Practice the complete review cycle including addressing feedback
 5. Merge your changes and clean up branches
-6. Learn to keep your fork up-to-date with upstream changes
 
 This workshop teaches you the collaborative workflow used in professional development teams and open-source projects worldwide.
 
 ---
 
 ### Goal
-Practice the complete fork-based pull request workflow by making a simple change and going through the full review process.
+Practice the complete pull request workflow by making a simple change and going through the full review process.
 
 > **Prerequisites**: You should have already forked this repository and set up your local clone with upstream remote. If not, follow the setup instructions in the main README first.
 
 ---
 
-## 1. Start from a clean main (in your fork)
+## 1. Start from a clean main
 ```bash
 git checkout main
 git pull origin main
 ```
-> `git checkout {branch name}` - **Switch to main**: Change to the main branch  
-> `git pull origin {branch name}` - **Download updates**: Get latest changes from your fork
+> [`git checkout`](../git-glossary.md#git-checkout) | [`git pull`](../git-glossary.md#git-pull)
 
 ## 2. Create a feature branch
 ```bash
 git checkout -b feature/fix-salt-measurement
 ```
-> `git checkout -b {branch name}` - **Create and switch**: Create a new branch and immediately switch to it
+> [`git checkout -b`](../git-glossary.md#git-checkout--b)
 
 ## 3. Make the change
 
@@ -69,14 +66,13 @@ cd pull-request-flow
 git add desserts.ts
 git commit -m "Fix salt measurement: change from 1 cup to 1 teaspoon"
 ```
-> `git add` - **Stage changes**: Mark files to be included in the next commit  
-> `git commit` - **Save changes**: Create a snapshot of staged changes with a descriptive message
+> [`git add`](../git-glossary.md#git-add) | [`git commit`](../git-glossary.md#git-commit)
 
 ## 5. Push your branch to your fork
 ```bash
 git push -u origin feature/fix-salt-measurement
 ```
-> `git push -u origin` - **Upload and track**: Send your branch to your fork and set up tracking
+> [`git push -u origin`](../git-glossary.md#git-push--u-origin)
 
 ## 6. Open a PR in your fork
 
@@ -111,11 +107,11 @@ git commit -m "Address feedback: add comment explaining salt measurement"
 git push
 ```
 
-The PR updates automatically! ✨
+The PR updates automatically!
 
-## 8. Merge (in your fork)
+## 8. Merge
 
-1. Use **"Merge pull request"** on your fork
+1. Use **"Merge pull request"** on your branch in github
 2. **Delete branch** (remote) after merging
 
 ## 9. Sync your fork's main locally
@@ -124,13 +120,12 @@ git checkout main
 git pull origin main
 git branch -d feature/fix-salt-measurement
 ```
-> `git branch -d` - **Delete branch**: Remove the local feature branch after merging
+> [`git checkout`](../git-glossary.md#git-checkout) | [`git pull`](../git-glossary.md#git-pull) | [`git branch -d`](../git-glossary.md#git-branch--d)
 
 ---
+<!-- ## 🔁 Keeping your fork up-to-date with upstream
 
-## 🔁 Keeping your fork up-to-date with upstream
-
-When the instructor updates the template:
+When the original template updates:
 
 ```bash
 git fetch upstream
@@ -138,20 +133,19 @@ git checkout main
 git merge upstream/main   # or: git rebase upstream/main
 git push origin main
 ```
-> `git fetch upstream` - **Download from upstream**: Get latest changes from the original repository  
-> `git merge upstream/main` - **Integrate upstream**: Combine upstream changes into your main branch
+> [`git fetch upstream`](../git-glossary.md#git-fetch-upstream) | [`git checkout`](../git-glossary.md#git-checkout) | [`git merge upstream/main`](../git-glossary.md#git-merge-upstreammain) | [`git push`](../git-glossary.md#git-push)
 
----
+--- -->
 
 ## 🎉 Congratulations!
 
-You've completed the full fork-based pull request workflow! This is the standard process used in open-source projects and many professional development teams.
+You've completed the full pull request workflow! This is the standard process used in open-source projects and many professional development teams.
 
 ### What you learned:
-- Fork-based collaboration workflow
+- Collaboration workflow
 - Feature branch development
 - Pull request creation and management
 - Code review process
-- Keeping forks synchronized with upstream
+<!-- - Keeping forks synchronized with upstream -->
 
 **Next**: Try creating another PR with a different change to practice the workflow!
