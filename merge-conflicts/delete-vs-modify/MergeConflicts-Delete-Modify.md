@@ -29,14 +29,14 @@ This workshop teaches you to handle one of Git's more complex conflict types tha
 
 ---
 
-## Exercise 1: Delete vs Modify Conflict
+## Delete vs Modify Conflict
 
 ### Goal
 Create a delete vs modify conflict by having one branch delete a file while another modifies it, then resolve the conflict.
 
 ---
 
-### 🧨 Step 1 — Navigate to the Lesson Directory
+### Step 1 — Navigate to the Lesson Directory
 
 Navigate to the lesson directory where the demo file is already provided:
 
@@ -49,7 +49,7 @@ You'll see that `conflict-file.txt` is already provided for this exercise. Let's
 ```bash
 cat conflict-file.txt
 ```
-> [`cat`](../../git-glossary.md#cat)
+> `cat` - **Display file contents**: Shows the complete contents of a file in the terminal
 
 ---
 
@@ -84,7 +84,7 @@ git push origin modify-branch
 
 ---
 
-### 🧨 Step 3 — Delete the File on Main
+### Step 3 — Delete the File on Main
 
 Go back to main and delete the file there:
 
@@ -93,7 +93,7 @@ git checkout main
 ```
 > [`git checkout`](../../git-glossary.md#git-checkout)
 
-Delete the file:
+Delete the file: You can do this through the CLI or manually in your IDE
 ```bash
 git rm conflict-file.txt 
 git commit -m "Delete conflict-file.txt"
@@ -102,7 +102,7 @@ git commit -m "Delete conflict-file.txt"
 
 ---
 
-### ⚔️ Step 4 — Merge and Observe the Conflict
+### Step 4 — Merge and Observe the Conflict
 
 Switch back to your modify branch and try merging main:
 
@@ -119,7 +119,7 @@ Version modify-branch of conflict-file.txt left in tree.
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-**🔍 Understanding the Conflict Message:**
+**Understanding the Conflict Message:**
 - `CONFLICT (modify/delete)`: Tells you the type of conflict
 - `deleted in main`: Shows which branch deleted the file
 - `modified in modify-branch`: Shows which branch modified it
@@ -127,41 +127,28 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 ---
 
-### 🧩 Step 5 — Resolve the Conflict
+### Step 5 — Resolve the Conflict
 
-At this point, you have two choices:
+At this point, you have two choices, but **for this exercise, we'll keep the modified file**.
 
-#### Option A: Keep the deletion
-If the file should stay deleted:
-
-```bash
-git rm conflict-file.txt
-git commit
-```
-> [`git rm`](../../git-glossary.md#git-rm) | [`git commit`](../../git-glossary.md#git-commit)
-
-**When to choose this:**
-- The file was removed for a good reason (deprecated, refactored, etc.)
-- The modifications on the other branch are no longer needed
-- You're cleaning up the codebase
-
-#### Option B: Keep the modified version
-If the modified file should be kept:
+Keep the modified version:
 
 ```bash
 git add conflict-file.txt
-git commit
+git commit -m "Resolve delete vs modify conflict: keep modified file"
 ```
 > [`git add`](../../git-glossary.md#git-add) | [`git commit`](../../git-glossary.md#git-commit)
 
-**When to choose this:**
-- The modifications contain important changes
-- The deletion was premature or incorrect
-- The file is still needed in the project
+**Why we're keeping the modified file:**
+- The modifications contain important changes that shouldn't be lost
+- This demonstrates the "keep changes" resolution path
+- Shows how to preserve work when conflicts arise
+
+**Alternative (for reference):** If you wanted to keep the deletion instead, you would run `git rm conflict-file.txt` followed by `git commit`.
 
 ---
 
-### 🧭 Step 6 — Verify the Result
+### Step 6 — Verify the Result
 
 Check the final state:
 ```bash
@@ -182,7 +169,7 @@ Check whether the file is present or deleted after resolution.
 
 ---
 
-## 💡 What You Learned
+## What You Learned
 
 ✅ **How Git handles delete vs modify conflicts** - Unlike inline conflicts, these require explicit decisions about file existence
 
@@ -196,7 +183,7 @@ Check whether the file is present or deleted after resolution.
 
 ---
 
-## 🎯 Practice Scenarios
+## Practice Scenarios
 
 Try these variations to deepen your understanding:
 
@@ -206,9 +193,9 @@ Try these variations to deepen your understanding:
 
 ---
 
-## 🔗 Next Steps
+## Next Steps
 
-- Practice with [Lesson One: Inline Conflicts](../MergeConflicts-InLine.md) if you haven't already
+- Practice with [Inline Conflicts](../MergeConflicts-InLine.md) if you haven't already
 - Try creating more complex scenarios with multiple files
 - Learn about merge strategies that can help prevent these conflicts
 
