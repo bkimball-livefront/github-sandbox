@@ -18,7 +18,7 @@ This repository provides a safe, structured environment to practice common Git s
 
 ## Git Command Glossary
 
-📖 **[View the complete Git Command Glossary](git-glossary.md)**
+**[View the complete Git Command Glossary](git-glossary.md)**
 
 Quick reference for all Git commands used in the workshops, with examples and use cases. Bookmark this page for easy command lookup!
 
@@ -39,9 +39,14 @@ cd github-sandbox
 git remote add upstream https://github.com/bkimball-livefront/github-sandbox.git
 git remote -v   # should show 'origin' (your fork) and 'upstream' (this template)
 ```
-> `git clone` - **Download repository**: Copy a repository from GitHub to your local machine  
-> `git remote add` - **Add remote connection**: Link your local repo to another repository  
-> `git remote -v` - **View remotes**: List all remote repositories connected to your local repo
+
+**What this does:**
+1. **Downloads** your fork to your computer
+2. **Navigates** into the project folder
+3. **Connects** your local repo to the original template (upstream)
+4. **Verifies** both connections are set up correctly
+
+This gives you access to both your fork (for saving work) and the original template (for getting updates).
 
 ## Keep Your Fork in Sync with Upstream
 When new content is added to the upstream template:
@@ -52,9 +57,7 @@ git checkout main
 git merge upstream/main     # or: git rebase upstream/main
 git push origin main
 ```
-> `git fetch` - **Download updates**: Get latest changes from remote without merging  
-> `git merge` - **Combine branches**: Integrate changes from another branch into current branch  
-> `git push` - **Upload changes**: Send your local commits to the remote repository
+> [`git fetch upstream`](git-glossary.md#git-fetch-upstream) | [`git checkout`](git-glossary.md#git-checkout) | [`git merge upstream/main`](git-glossary.md#git-merge-upstreammain) | [`git push`](git-glossary.md#git-push)
 
 
 ## Current Workshops
@@ -76,9 +79,7 @@ git checkout main
 git reset --hard HEAD
 git clean -fd
 ```
-> `git checkout main` - **Switch to main branch**: Return to the main branch  
-> `git reset --hard HEAD` - **Discard all changes**: Remove all uncommitted changes and reset to last commit  
-> `git clean -fd` - **Remove untracked files**: Delete any new files/folders not tracked by Git
+> [`git checkout`](git-glossary.md#git-checkout)
 
 **Use this when**: You have uncommitted changes you want to discard but want to keep any workshop branches or commits you've made.
 
@@ -90,9 +91,7 @@ git checkout main
 git reset --hard upstream/main   # WARNING: This removes ALL commits from your fork's main
 git push --force origin main
 ```
-> `git fetch upstream` - **Download updates**: Get latest changes from the original template repository  
-> `git reset --hard upstream/main` - **Reset completely**: Make your main branch identical to upstream  
-> `git push --force origin main` - **Force update**: Overwrite your fork's main branch on GitHub
+> [`git fetch upstream`](git-glossary.md#git-fetch-upstream) | [`git checkout`](git-glossary.md#git-checkout) | [`git push`](git-glossary.md#git-push)
 
 **Use this when**: 
 - You've completed workshops and merged them into your main branch

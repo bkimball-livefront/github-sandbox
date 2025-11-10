@@ -7,7 +7,6 @@ A comprehensive reference for Git commands used throughout the workshops. Bookma
 - [Branching & Merging](#branching--merging)
 - [Remote Operations](#remote-operations)
 - [Conflict Resolution](#conflict-resolution)
-- [File Operations](#file-operations)
 - [Information & Status](#information--status)
 
 ---
@@ -123,31 +122,6 @@ A comprehensive reference for Git commands used throughout the workshops. Bookma
 - **Example**: `git rm unwanted-file.txt`
 - **Use case**: Removing files that should no longer be tracked by Git
 - **Alternative**: You could manually delete with `rm {file-name}` then stage with `git add {file-name}`, but `git rm` does both steps at once
-
----
-
-## File Operations
-
-### cat
-**Display file contents**: Shows the complete contents of a file in the terminal
-- **Syntax**: `cat {file-name}`
-- **Example**: `cat conflict-file.txt`
-- **Use case**: Quickly viewing file contents without opening an editor
-- **Tip**: Use `less` or `more` for large files to enable scrolling
-
-### ls
-**List directory contents**: Show files and folders in current directory
-- **Syntax**: `ls` or `ls {directory-path}`
-- **Example**: `ls` or `ls -la` (detailed view)
-- **Use case**: See what files are in your current location
-- **Tip**: Use `ls -la` to see hidden files and detailed information
-
-### cd
-**Change directory**: Navigate to a different folder
-- **Syntax**: `cd {directory-path}`
-- **Example**: `cd merge-conflicts` or `cd ..` (up one level)
-- **Use case**: Moving around your file system
-- **Tip**: Use `cd ~` to go to home directory, `cd -` to go back to previous directory
 
 ---
 
