@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Purpose](#purpose)
+- [Git Command Glossary](#git-command-glossary)
 - [Get Started (Fork Workflow)](#get-started-fork-workflow)
 - [Keep Your Fork in Sync with Upstream](#-keep-your-fork-in-sync-with-upstream)
 - [Current Workshops](#-current-workshops)
@@ -12,6 +13,14 @@
 ## Purpose
 
 This repository provides a safe, structured environment to practice common Git scenarios and build confidence with Git workflows. Whether you're new to Git or want to sharpen your skills with challenging situations, this sandbox lets you experiment, make mistakes, and learn without consequences.
+
+---
+
+## Git Command Glossary
+
+📖 **[View the complete Git Command Glossary](git-glossary.md)**
+
+Quick reference for all Git commands used in the workshops, with examples and use cases. Bookmark this page for easy command lookup!
 
 ---
 
