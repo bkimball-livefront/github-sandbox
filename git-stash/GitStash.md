@@ -4,12 +4,25 @@
 
 **Git stash** is a powerful feature that temporarily saves your uncommitted changes (both staged and unstaged) and reverts your working directory to match the HEAD commit. Think of it as a "clipboard" for your work-in-progress changes that you can retrieve later.
 
-**Why Git Stash is essential**:
+<!-- **Why Git Stash is essential**:
 - **Branch switching**: Quickly switch branches without committing incomplete work
 - **Emergency fixes**: Handle urgent issues while preserving your current work
 - **Clean workspace**: Get a clean working directory when you need to pull updates
 - **Experimentation**: Try different approaches without losing your current progress
-- **Context switching**: Pause work on one feature to help with another
+- **Context switching**: Pause work on one feature to help with another -->
+
+### Why Git Stash Is Useful
+
+- Switch branches safely without committing unfinished work  
+- Fix urgent bugs while preserving work-in-progress  
+- Pull updates cleanly  
+- Experiment safely  
+- Pause & resume work anytime  
+
+### Important Notes
+
+- Stashing does **not** save committed changes — only uncommitted ones  
+- `git stash save` is deprecated; use `git stash push`  
 
 **What you'll learn in this Workshop**:
 1. Creating stashes with descriptive messages
