@@ -1,4 +1,4 @@
-// Shopping cart functionality
+// Demo code for git-stash workshop - Shopping cart functionality
 interface CartItem {
   id: string;
   name: string;
