@@ -7,6 +7,7 @@
 - [Keep Your Fork in Sync with Upstream](#-keep-your-fork-in-sync-with-upstream)
 - [Current Workshops](#-current-workshops)
   - [Pull Request Flow](#pull-request-flow)
+  - [Git Stash](#git-stash)
   - [Inline Merge Conflicts](#inline-merge-conflicts)
 - [Resetting Your Sandbox](#resetting-your-sandbox-local-only)
 
@@ -64,6 +65,9 @@ git push origin main
 
 ### Pull Request Flow
 **Location**: `pull-request-flow/PullRequestFlow.md`
+
+### Git Stash
+**Location**: `git-stash/GitStash.md`
 
 ### Merge Conflicts
 **Location**: `merge-conflicts/` (Multiple lessons available)

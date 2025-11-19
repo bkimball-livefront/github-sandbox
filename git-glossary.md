@@ -6,6 +6,7 @@ A comprehensive reference for Git commands used throughout the workshops. Bookma
 - [Basic Commands](#basic-commands)
 - [Branching & Merging](#branching--merging)
 - [Remote Operations](#remote-operations)
+- [Stash Operations](#stash-operations)
 - [Conflict Resolution](#conflict-resolution)
 - [Information & Status](#information--status)
 
@@ -114,6 +115,73 @@ A comprehensive reference for Git commands used throughout the workshops. Bookma
 
 ---
 
+## Stash Operations
+
+### git stash push -m
+**Save work-in-progress**: Temporarily store uncommitted changes with a descriptive message
+- **Syntax**: `git stash push -m "{descriptive-message}"`
+- **Example**: `git stash push -m "WIP: Adding user authentication"`
+- **Use case**: Saving incomplete work when you need to switch contexts
+- **Tip**: Always use descriptive messages to remember what you stashed
+
+### git stash list
+**View stashed changes**: Display all saved stashes with their messages
+- **Syntax**: `git stash list`
+- **Example**: `git stash list`
+- **Use case**: Seeing what stashes you have available to apply
+- **Tip**: Stashes are numbered stash@{0}, stash@{1}, etc. (newest to oldest)
+
+### git stash apply
+**Restore stashed changes**: Apply a stash to your working directory without removing it from stash list
+- **Syntax**: `git stash apply {stash-reference}`
+- **Example**: `git stash apply stash@{0}` or just `git stash apply` (applies most recent)
+- **Use case**: Retrieving your work-in-progress changes
+- **Tip**: Use when you might need to apply the same stash to multiple branches
+
+### git stash pop
+**Apply and remove**: Apply a stash to your working directory and remove it from stash list
+- **Syntax**: `git stash pop {stash-reference}`
+- **Example**: `git stash pop stash@{0}` or just `git stash pop` (pops most recent)
+- **Use case**: Retrieving your work when you're done with the stash
+- **Tip**: More common than apply since you usually don't need the stash again
+
+### git stash show -p
+**Preview stash contents**: Show exactly what changes are stored in a stash
+- **Syntax**: `git stash show -p {stash-reference}`
+- **Example**: `git stash show -p stash@{0}`
+- **Use case**: Reviewing what's in a stash before applying it
+- **Tip**: Helps avoid conflicts by seeing what you're about to apply
+
+### git stash drop
+**Delete a stash**: Remove a specific stash from your stash list
+- **Syntax**: `git stash drop {stash-reference}`
+- **Example**: `git stash drop stash@{1}`
+- **Use case**: Cleaning up stashes you no longer need
+- **Tip**: Be careful - this permanently deletes the stash!
+
+### git stash clear
+**Delete all stashes**: Remove all saved stashes from your stash list
+- **Syntax**: `git stash clear`
+- **Example**: `git stash clear`
+- **Use case**: Starting fresh with no saved work-in-progress
+- **Warning**: This permanently deletes ALL stashes - use with caution!
+
+### git stash branch
+**Create branch from stash**: Create a new branch and apply a stash to it
+- **Syntax**: `git stash branch {new-branch-name} {stash-reference}`
+- **Example**: `git stash branch feature/stashed-work stash@{0}`
+- **Use case**: When a stash doesn't apply cleanly to current branch
+- **Tip**: Great for handling complex conflicts or exploring different approaches
+
+### git stash push -u
+**Stash including untracked files**: Save both tracked changes and new files
+- **Syntax**: `git stash push -u -m "{message}"`
+- **Example**: `git stash push -u -m "Include new config files"`
+- **Use case**: When you have new files that aren't being tracked by Git yet
+- **Tip**: Without -u, new files won't be included in the stash
+
+---
+
 ## Conflict Resolution
 
 ### git rm
@@ -163,6 +231,22 @@ git push origin main                        # Update your fork
 # 1. Edit files to resolve conflicts
 git add {resolved-file-name}                # Stage resolved files
 git commit                                  # Complete the merge
+```
+
+### Using Git Stash
+```bash
+# Save work-in-progress before switching context
+git stash push -m "WIP: {description}"      # Save current changes
+git checkout {other-branch}                 # Switch to work on something else
+# ... do other work ...
+git checkout {original-branch}              # Return to original work
+git stash pop                               # Restore your changes
+
+# Handle stash conflicts
+git stash pop                               # If conflicts occur
+# Edit files to resolve conflicts
+git add {resolved-files}                    # Stage resolved conflicts
+# Stash is automatically removed after successful pop
 ```
 
 ---
