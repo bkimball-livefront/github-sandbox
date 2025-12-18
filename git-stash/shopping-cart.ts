@@ -15,4 +15,10 @@ class ShoppingCart {
   addItem(item: CartItem): void {
     this.items.push(item);
   }
+
+  getItems(): CartItem[] {
+    return this.items;
+  }
 }
+
+export { ShoppingCart, CartItem };

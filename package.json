@@ -1,0 +1,12 @@
+{
+  "name": "github-sandbox",
+  "version": "1.0.0",
+  "description": "Demo repository for GitHub features",
+  "scripts": {
+    "test": "tsx git-stash/shopping-cart.test.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
